@@ -24,31 +24,37 @@ const FilterBar = (props) => {
     }, [])
 
     const toBeRenderdLabels = labels.map(label => {
-        <>
-            <input onChange={() => filterBier("bier")} className="fliterBar__chackbox" type="checkbox" id="bier" />
-            <label htmlFor="bier">Bier</label>
-        </>
+        let input = <input unchecked onChange={() => filterItem(label.name)} className="fliterBar__chackbox" type="checkbox" id={label.name} />
+        if(label.checked){
+            input = <input checked onChange={() => filterItem(label.name)} className="fliterBar__chackbox" type="checkbox" id={label.name} />
+        }
+        return (
+            <div className="filterbarInputWrapper">
+                {input}
+                <label htmlFor={label.name}>{label.name}</label>
+            </div>
+        )
     })
 
-    const filterBier = (filter) => {
+    const filterItem = (filter) => {
+        const copy = [...labels]
+        const newState = copy.map(label => {
+            if(label.name !== filter){
+                label.checked = false
+            }
+            if(label.name === filter){
+                label.checked = true
+            }
+            return label
+        })
+        setLabels(newState)
         props.onFilter(filter)
     }
 
     return (
         <section className="filterBar">
             <div className="filterbarWrapper">
-                <div className="filterbarInputWrapper">
-                    <input onChange={() => filterBier("bier")} className="fliterBar__chackbox" type="checkbox" id="bier" />
-                    <label htmlFor="bier">Bier</label>
-                </div>
-                <div className="filterbarInputWrapper">
-                    <input onChange={() => filterBier("fris")} className="fliterBar__chackbox" type="checkbox" id="fris" />
-                    <label htmlFor="fris">Fris</label>
-                </div>
-                <div className="filterbarInputWrapper">
-                    <input onChange={() => filterBier("cocktails")} className="fliterBar__chackbox" type="checkbox" id="cocktails" />
-                    <label htmlFor="cocktails">Cocktail</label>
-                </div>
+                {toBeRenderdLabels}
             </div>
         </section>
     )
