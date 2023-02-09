@@ -1,19 +1,52 @@
-.filterBar{
+.filterBar {
     position: fixed;
     height: min(10rem, 10vh);
     top: 0;
     left: 0;
     right: 0;
-    background: white;
+    background: rgb(255, 255, 255, 0.5);
     display: flex;
-
+    backdrop-filter: blur(10px);
 }
 
-.filterbardWrapper{
+.filterbarWrapper {
     width: 60vw;
     display: flex;
     margin: 0 auto;
     align-items: center;
     height: 100%;
     justify-content: space-between;
+}
+
+.filterbarInputWrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filterbarInputWrapper>input {
+    appearance: none;
+}
+
+.filterbarInputWrapper>label {
+    background: hsl(241, 75%, 56%);
+    background: -webkit-linear-gradient(to right, hsl(345, 87%, 68%), hsl(241, 75%, 56%));
+    background: linear-gradient(to right, hsl(345, 77%, 68%), hsl(241, 75%, 56%));
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    color: white;
+}
+
+.filterbarInputWrapper>input:checked+label {
+    background: #00F260;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0575E6, #00F260);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0575E6, #00F260);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.filterbarInputWrapper>label:hover{
+    cursor: pointer;
 }

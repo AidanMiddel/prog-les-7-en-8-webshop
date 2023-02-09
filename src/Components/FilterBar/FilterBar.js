@@ -3,18 +3,18 @@ import "./FilterBar.css";
 const FilterBar = () => {
     return (
         <section className="filterBar">
-            <div className="filterbardWrapper">
-                <div className="filterbardInputWrapper">
-                    <input className="fliterBar__chackbox" type="checkbox" />
-                    <label htmlFor="">Bier</label>
+            <div className="filterbarWrapper">
+                <div className="filterbarInputWrapper">
+                    <input className="fliterBar__chackbox" type="checkbox" id="bier" />
+                    <label htmlFor="bier">Bier</label>
                 </div>
-                <div className="filterbardInputWrapper">
-                    <input className="fliterBar__chackbox" type="checkbox" />
-                    <label htmlFor="">Fris</label>
+                <div className="filterbarInputWrapper">
+                    <input className="fliterBar__chackbox" type="checkbox" id="fris"/>
+                    <label htmlFor="fris">Fris</label>
                 </div>
-                <div className="filterbardInputWrapper">
-                    <input className="fliterBar__chackbox" type="checkbox" />
-                    <label htmlFor="">Cocktail</label>
+                <div className="filterbarInputWrapper">
+                    <input className="fliterBar__chackbox" type="checkbox" id="cocktails"/>
+                    <label htmlFor="cocktails">Cocktail</label>
                 </div>
             </div>
         </section>
