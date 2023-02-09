@@ -18,6 +18,9 @@ import cocktails1 from "../Img/cocktails/1.jpg"
 import cocktails2 from "../Img/cocktails/2.jpg"
 import cocktails3 from "../Img/cocktails/3.jpg"
 import cocktails4 from "../Img/cocktails/4.jpg"
+import cocktails5 from "../Img/cocktails/5.jpg"
+import cocktails6 from "../Img/cocktails/6.jpg"
+import cocktails7 from "../Img/cocktails/7.jpg"
 
 const items = {
     bier:[
@@ -111,26 +114,44 @@ const items = {
     cocktails:[
         {
             name: "cocktail1",
-            description: "lekker fris 1",
+            description: "lekker cocktail 1",
             img: cocktails1,
             alt: ""
         },
         {
             name: "cocktail2",
-            description: "lekker fris 2",
+            description: "lekker cocktail 2",
             img: cocktails2,
             alt: ""
         },
         {
             name: "cocktail3",
-            description: "lekker fris 3",
+            description: "lekker cocktail 3",
             img: cocktails3,
             alt: ""
         },
         {
             name: "cocktail4",
-            description: "lekker fris 4",
+            description: "lekker cocktail 4",
             img: cocktails4,
+            alt: ""
+        },
+        {
+            name: "cocktail5",
+            description: "lekker cocktail 5",
+            img: cocktails5,
+            alt: ""
+        },
+        {
+            name: "cocktail6",
+            description: "lekker cocktail 6",
+            img: cocktails6,
+            alt: ""
+        },
+        {
+            name: "cocktail7",
+            description: "lekker cocktail 7",
+            img: cocktails7,
             alt: ""
         },
     ]
