@@ -1,8 +1,12 @@
 import './App.css';
 
+import GalleryCard from "../Components/GalleryCard/GalleryCard"
+
 function App() {
   return (
-    <h1>shop</h1>
+    <>
+      <GalleryCard />
+    </>
   );
 }
 
