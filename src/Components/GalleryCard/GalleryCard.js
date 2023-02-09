@@ -5,7 +5,7 @@ import getToBeRenderdFigure from "./Helpers/galleryCardHelper"
 const GalleryCard = (props) => {
     return (
         <article className="galleryCard">
-            {getToBeRenderdFigure(props.drinks)}
+            {getToBeRenderdFigure(props.collection)}
         </article>
     );
 };

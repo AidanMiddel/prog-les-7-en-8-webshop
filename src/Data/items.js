@@ -22,8 +22,8 @@ import cocktails5 from "../Img/cocktails/5.jpg"
 import cocktails6 from "../Img/cocktails/6.jpg"
 import cocktails7 from "../Img/cocktails/7.jpg"
 
-const items = {
-    bier:[
+const items = [
+    [
         {
             name: "bier1",
             description: "lekker bier 1",
@@ -67,7 +67,7 @@ const items = {
             alt: ""
         },
     ],
-    fris:[
+    [
         {
             name: "fris1",
             description: "lekker fris 1",
@@ -111,7 +111,7 @@ const items = {
             alt: ""
         },
     ],
-    cocktails:[
+    [
         {
             name: "cocktail1",
             description: "lekker cocktail 1",
@@ -155,6 +155,6 @@ const items = {
             alt: ""
         },
     ]
-}
+]
 
 export default items;

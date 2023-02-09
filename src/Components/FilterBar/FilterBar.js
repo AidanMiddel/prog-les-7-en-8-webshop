@@ -1,11 +1,16 @@
 import "./FilterBar.css";
 
-const FilterBar = () => {
+const FilterBar = (props) => {
+
+    const filterBier = (event) => {
+        props.onFilter()
+    }
+    
     return (
         <section className="filterBar">
             <div className="filterbarWrapper">
                 <div className="filterbarInputWrapper">
-                    <input className="fliterBar__chackbox" type="checkbox" id="bier" />
+                    <input onChange={filterBier} className="fliterBar__chackbox" type="checkbox" id="bier" />
                     <label htmlFor="bier">Bier</label>
                 </div>
                 <div className="filterbarInputWrapper">

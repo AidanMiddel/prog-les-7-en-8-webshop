@@ -1,18 +1,30 @@
 import './App.css';
 
-import items from '../Data/items';
+import itemsFromData from '../Data/items';
 import GalleryCard from "../Components/GalleryCard/GalleryCard"
 import FilterBar from '../Components/FilterBar/FilterBar';
+import { useEffect, useState } from 'react';
 
 function App() {
 
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    setItems(itemsFromData)
+  }, [])
+
+  const onFilter = () => {
+    console.log("app wow")
+  }
+
+  const galleryCardsToBeRedererd = items.map(collection => {
+    return <GalleryCard collection={collection} />
+  })
 
   return (
     <>
-      <FilterBar />
-      <GalleryCard drinks={items.bier}/>
-      <GalleryCard drinks={items.fris}/>
-      <GalleryCard drinks={items.cocktails}/>
+      <FilterBar onFilter={onFilter} />
+      {galleryCardsToBeRedererd}
     </>
   );
 }
