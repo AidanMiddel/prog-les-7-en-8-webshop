@@ -2,7 +2,7 @@ import items from "../../../Data/items";
 
 let iterator = 1;
 let classToBeAdded = ""
-let toBeRenderdFigures = items.bier.map(bier => {
+let toBeRenderdFigures = items.fris.map(bier => {
     switch (iterator) {
         case 1:
             classToBeAdded = "galleryCard__figure galleryCard__figure--big";
