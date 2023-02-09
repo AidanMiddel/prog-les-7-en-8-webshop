@@ -14,6 +14,11 @@ import fris5 from "../Img/fris/5.jpg"
 import fris6 from "../Img/fris/6.jpg"
 import fris7 from "../Img/fris/7.jpg"
 
+import cocktails1 from "../Img/cocktails/1.jpg"
+import cocktails2 from "../Img/cocktails/2.jpg"
+import cocktails3 from "../Img/cocktails/3.jpg"
+import cocktails4 from "../Img/cocktails/4.jpg"
+
 const items = {
     bier:[
         {
@@ -100,6 +105,32 @@ const items = {
             name: "fris7",
             description: "lekker fris 7",
             img: fris7,
+            alt: ""
+        },
+    ],
+    cocktails:[
+        {
+            name: "cocktail1",
+            description: "lekker fris 1",
+            img: cocktails1,
+            alt: ""
+        },
+        {
+            name: "cocktail2",
+            description: "lekker fris 2",
+            img: cocktails2,
+            alt: ""
+        },
+        {
+            name: "cocktail3",
+            description: "lekker fris 3",
+            img: cocktails3,
+            alt: ""
+        },
+        {
+            name: "cocktail4",
+            description: "lekker fris 4",
+            img: cocktails4,
             alt: ""
         },
     ]
