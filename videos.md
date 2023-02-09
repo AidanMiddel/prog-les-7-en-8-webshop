@@ -1,4 +1,3 @@
-Video 6/13 => https://web.microsoftstream.com/video/ca02ab09-b208-45ca-a3bf-a51b17ec7810
 Video 7/13 => https://web.microsoftstream.com/video/cdf1cd3f-6c53-4118-97bb-56a29526812b
 Video 8/13 => https://web.microsoftstream.com/video/5256cee6-873e-4f5b-a5bb-168e39dc4d4f
 Video 9/13 => https://web.microsoftstream.com/video/428e744e-3eb7-4cad-920c-70b74d8fcc4d
