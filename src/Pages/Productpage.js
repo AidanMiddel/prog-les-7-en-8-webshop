@@ -1,19 +1,11 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect} from "react";
 import "./Productpage.css";
 
 const Productpage = (props) => {
     useEffect(() => {
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     })
 
-    const {type} = useParams();
-    if (type === "bier"){
-        document
-        .getElementsByTagName('meta')
-        .namedItem('discription')
-        .setAttribute('content','add beer to cart')
-    }
 
     const toBeRenderd = props.collection.map(item => {
         return (
@@ -21,7 +13,7 @@ const Productpage = (props) => {
                 <img src={item.img} alt={item.alt} />
                 <p>{item.name}</p>
                 <p>{item.description}</p>
-                <button>add to card</button>
+                <button onClick={props.handleIncrement}>add to cart</button>
             </li>
         )
     })
