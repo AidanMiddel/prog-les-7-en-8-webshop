@@ -21,8 +21,8 @@ function Homepage(props) {
         let types = ["bier", "fris", "cocktails"];
         const galleryCardsToBeRedererd = itemsFromData.map(collection => {
             let temp = (
-                <Link onClick={() => onGalleryCardClicked(collection)} to={`/product/${types[i]}`}>
-                    <GalleryCard key={types[i]} type={types[i]} collection={collection} />
+                <Link type={types[i]} onClick={() => onGalleryCardClicked(collection)} to={`/product/${types[i]}`}>
+                    <GalleryCard key={types[i]}  collection={collection} />
                 </Link>
             )
             i += 1

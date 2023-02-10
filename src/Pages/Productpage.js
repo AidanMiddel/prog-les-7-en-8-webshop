@@ -1,10 +1,20 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./Productpage.css";
 
 const Productpage = (props) => {
     useEffect(() => {
         window.scrollTo(0,0)
     })
+
+    const {type} = useParams();
+    if (type === "bier"){
+        document
+        .getElementsByTagName('meta')
+        .namedItem('discription')
+        .setAttribute('content','add beer to cart')
+    }
+
     const toBeRenderd = props.collection.map(item => {
         return (
             <li key={item.name} className="productpage__listitem">
