@@ -35,6 +35,7 @@
     padding: 1rem 3rem;
     border-radius: 20px;
     color: white;
+    text-transform: capitalize;
 }
 
 .filterbarInputWrapper>input:checked+label {

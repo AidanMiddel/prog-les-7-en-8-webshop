@@ -1,42 +1,16 @@
 import './App.css';
-
-import itemsFromData from '../Data/items';
-import GalleryCard from "../Components/GalleryCard/GalleryCard"
-import FilterBar from '../Components/FilterBar/FilterBar';
-import { useEffect, useState } from 'react';
+import Homepage from '../Pages/Homepage';
+import Productpage from "../Pages/Productpage"
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  const [items, setItems] = useState([])
-  const [defaultItems, setDefaultItems] = useState([])
-
-  useEffect(() => {
-    setItems(itemsFromData)
-    let i = 0
-    let types = ["bier", "fris", "cocktails"];
-    const galleryCardsToBeRedererd = itemsFromData.map(collection => {
-      let temp = <GalleryCard key={types[i]} type={types[i]} collection={collection} />
-      i += 1
-      return temp
-    })
-    setItems(galleryCardsToBeRedererd)
-    setDefaultItems(galleryCardsToBeRedererd)
-  }, [])
-
-  const onFilter = (typeToBeFilterd) => {
-    const copy = [...defaultItems]
-       const cardsToBeRenderd = copy.filter(card => {
-        if(card.props.type === (typeToBeFilterd)){
-          return card
-        }
-       })
-       setItems([cardsToBeRenderd])
-  }
-
   return (
     <>
-      <FilterBar onFilter={onFilter} />
-      {items}
+      <Routes>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/product/:type" element={<Productpage />}></Route>
+      </Routes>
     </>
   );
 }
