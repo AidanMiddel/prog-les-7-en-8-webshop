@@ -8,15 +8,15 @@ const FilterBar = (props) => {
         let toBeRenderdLabels = [
             {
                 name: "bier",
-                checked: false
+                checked: "unchecked"
             },
             {
                 name: "fris",
-                checked: false
+                checked: "unchecked"
             },
             {
                 name: "cocktails",
-                checked: false
+                checked: "unchecked"
             },
         ]
 
@@ -24,12 +24,12 @@ const FilterBar = (props) => {
     }, [])
 
     const toBeRenderdLabels = labels.map(label => {
-        let input = <input unchecked onChange={() => filterItem(label.name)} className="fliterBar__chackbox" type="checkbox" id={label.name} />
-        if(label.checked){
-            input = <input checked onChange={() => filterItem(label.name)} className="fliterBar__chackbox" type="checkbox" id={label.name} />
+        let input = <input onChange={() => filterItem(label.name)} className="fliterBar__chackbox" type="checkbox" id={label.name} />
+        if(label.checked === "checked"){
+            input = <input checked={label.checked} onChange={() => filterItem(label.name)} className="fliterBar__chackbox" type="checkbox" id={label.name} />
         }
         return (
-            <div className="filterbarInputWrapper">
+            <div key={label.name} className="filterbarInputWrapper">
                 {input}
                 <label htmlFor={label.name}>{label.name}</label>
             </div>
@@ -40,10 +40,10 @@ const FilterBar = (props) => {
         const copy = [...labels]
         const newState = copy.map(label => {
             if(label.name !== filter){
-                label.checked = false
+                label.checked = "unchecked"
             }
             if(label.name === filter){
-                label.checked = true
+                label.checked = "checked"
             }
             return label
         })
