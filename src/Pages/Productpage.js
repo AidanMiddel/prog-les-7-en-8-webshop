@@ -1,8 +1,7 @@
-import itemsObject from "../Data/items"
 import "./Productpage.css";
 
-const Productpage = () => {
-    const toBeRenderd = itemsObject[0].map(item => {
+const Productpage = (props) => {
+    const toBeRenderd = props.collection.map(item => {
         return (
             <li key={item.name} className="productpage__listitem">
                 <img src={item.img} alt={item.alt} />

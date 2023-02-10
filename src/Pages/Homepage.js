@@ -4,41 +4,50 @@ import itemsFromData from '../Data/items';
 import GalleryCard from "../Components/GalleryCard/GalleryCard"
 import FilterBar from '../Components/FilterBar/FilterBar';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Homepage() {
+function Homepage(props) {
 
-  const [items, setItems] = useState([])
-  const [defaultItems, setDefaultItems] = useState([])
+    const [items, setItems] = useState([])
+    const [defaultItems, setDefaultItems] = useState([])
 
-  useEffect(() => {
-    setItems(itemsFromData)
-    let i = 0
-    let types = ["bier", "fris", "cocktails"];
-    const galleryCardsToBeRedererd = itemsFromData.map(collection => {
-      let temp = <GalleryCard key={types[i]} type={types[i]} collection={collection} />
-      i += 1
-      return temp
-    })
-    setItems(galleryCardsToBeRedererd)
-    setDefaultItems(galleryCardsToBeRedererd)
-  }, [])
+    const onGalleryCardClicked = (collection) => {
+        props.onGalleryCardClicked(collection)
+    }
 
-  const onFilter = (typeToBeFilterd) => {
-    const copy = [...defaultItems]
-       const cardsToBeRenderd = copy.filter(card => {
-        if(card.props.type === (typeToBeFilterd)){
-          return card
-        }
-       })
-       setItems([cardsToBeRenderd])
-  }
+    useEffect(() => {
+        setItems(itemsFromData)
+        let i = 0
+        let types = ["bier", "fris", "cocktails"];
+        const galleryCardsToBeRedererd = itemsFromData.map(collection => {
+            let temp = (
+                <Link onClick={() => onGalleryCardClicked(collection)} to={`/product/${types[i]}`}>
+                    <GalleryCard key={types[i]} type={types[i]} collection={collection} />
+                </Link>
+            )
+            i += 1
+            return temp
+        })
+        setItems(galleryCardsToBeRedererd)
+        setDefaultItems(galleryCardsToBeRedererd)
+    }, [])
 
-  return (
-    <>
-      <FilterBar onFilter={onFilter} />
-      {items}
-    </>
-  );
+    const onFilter = (typeToBeFilterd) => {
+        const copy = [...defaultItems]
+        const cardsToBeRenderd = copy.filter(card => {
+            if (card.props.type === (typeToBeFilterd)) {
+                return card
+            }
+        })
+        setItems([cardsToBeRenderd])
+    }
+
+    return (
+        <>
+            <FilterBar onFilter={onFilter} />
+            {items}
+        </>
+    );
 }
 
 export default Homepage;
