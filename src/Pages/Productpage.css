@@ -45,3 +45,19 @@
     border: 0.2rem solid #9796f0;
     color: #9796f0;
 }
+
+@media screen and (max-width: 81.25rem) {
+    .productpage{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 50rem) {
+    .productpage__listitem{
+        height: 50rem;
+        grid-template-columns: 100%;
+    }
+    body{
+        font-size: 1.6rem;
+    }
+}

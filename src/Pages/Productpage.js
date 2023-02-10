@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import "./Productpage.css";
 
 const Productpage = (props) => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    })
     const toBeRenderd = props.collection.map(item => {
         return (
             <li key={item.name} className="productpage__listitem">
